@@ -288,7 +288,8 @@ MonoBehaviour:
   - {fileID: 4421584432168144500, guid: 40fbe633f067ca34087da01f2cbe61c4, type: 3}
   - {fileID: 1974863947577741763, guid: f0dcf1919ca96d0418f3fcf023fa2050, type: 3}
   - {fileID: 3786636237028126146, guid: 440604c3f6fd8c94d93c68a0e4f89ddf, type: 3}
-  obstacleIndex: 3
+  obstacleIndex: 1
+  scoreText: {fileID: 0}
 --- !u!4 &262421875
 Transform:
   m_ObjectHideFlags: 0
