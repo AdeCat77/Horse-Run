@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    private Vector3 spawnPos = new Vector3(0,0,20);
     public GameObject[] obstaclePrefabs;
     private float startDelay = 2;
     private float repeatRate = 2;
@@ -35,8 +34,20 @@ public class SpawnManager : MonoBehaviour
     {
         if (!playerControllerScript.gameOver)
         {
-            int obstacleIndex = Random.Range(1,3);
-            Instantiate(obstaclePrefabs[obstacleIndex], spawnPos, obstaclePrefabs[obstacleIndex].transform.rotation);
+            int obstacleIndex = Random.Range(0, obstaclePrefabs.Length);
+            if (obstacleIndex == 0)
+            {
+                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(0,0.5f,20), obstaclePrefabs[obstacleIndex].transform.rotation);
+            }
+            if (obstacleIndex == 3)
+            {
+                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(0,1,20), obstaclePrefabs[obstacleIndex].transform.rotation);
+            }
+            else
+            {
+                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(0,0,20), obstaclePrefabs[obstacleIndex].transform.rotation);
+            }
+            //Instantiate(obstaclePrefabs[obstacleIndex], spawnPos, obstaclePrefabs[obstacleIndex].transform.rotation);
         }
     }
     IEnumerator spawnTarget()
