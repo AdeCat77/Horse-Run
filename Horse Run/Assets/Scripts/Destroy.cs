@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DestroyTarget : MonoBehaviour
 {
-    private float exitGame = 20;
+    private float exitGame = 50;
     
     // Start is called before the first frame update
     void Start()
@@ -15,7 +15,7 @@ public class DestroyTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.z > exitGame)
+        if (transform.position.x > exitGame)
         {
             Destroy(gameObject);
         }
