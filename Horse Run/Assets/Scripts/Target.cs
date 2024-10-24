@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    private Rigidbody targetRb;
     
     // Start is called before the first frame update
     void Start()
