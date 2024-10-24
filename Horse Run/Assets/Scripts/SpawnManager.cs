@@ -37,15 +37,15 @@ public class SpawnManager : MonoBehaviour
             int obstacleIndex = Random.Range(0, obstaclePrefabs.Length);
             if (obstacleIndex == 0)
             {
-                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(0,0.5f,20), obstaclePrefabs[obstacleIndex].transform.rotation);
+                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(20,0.5f,0), obstaclePrefabs[obstacleIndex].transform.rotation);
             }
             if (obstacleIndex == 3)
             {
-                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(0,1,20), obstaclePrefabs[obstacleIndex].transform.rotation);
+                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(20,1,0), obstaclePrefabs[obstacleIndex].transform.rotation);
             }
             else
             {
-                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(0,0,20), obstaclePrefabs[obstacleIndex].transform.rotation);
+                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(20,0,0), obstaclePrefabs[obstacleIndex].transform.rotation);
             }
             //Instantiate(obstaclePrefabs[obstacleIndex], spawnPos, obstaclePrefabs[obstacleIndex].transform.rotation);
         }
