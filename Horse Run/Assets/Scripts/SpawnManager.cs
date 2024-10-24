@@ -7,6 +7,8 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public GameObject[] obstaclePrefabs;
+    public GameObject targetPrefab;
+    private int targetRange;
     private float startDelay = 2;
     private float repeatRate = 2;
     private PlayerController playerControllerScript;
@@ -19,6 +21,7 @@ public class SpawnManager : MonoBehaviour
     void Start()
     {
         InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
+        InvokeRepeating("SpawnTarget", startDelay, repeatRate);
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         score = 0;
         UpdateScore(0);
@@ -50,6 +53,16 @@ public class SpawnManager : MonoBehaviour
             //Instantiate(obstaclePrefabs[obstacleIndex], spawnPos, obstaclePrefabs[obstacleIndex].transform.rotation);
         }
     }
+
+    void SpawnTarget()
+    {
+        if (!playerControllerScript.gameOver)
+        {
+            int targetRange = Random.Range(0,5);
+            Instantiate(targetPrefab, new Vector3(20, targetRange, 0), targetPrefab.transform.rotation);
+        }
+    }
+
     IEnumerator spawnTarget()
     {
         while (true)
@@ -57,6 +70,7 @@ public class SpawnManager : MonoBehaviour
             UpdateScore(0);
         }
     }
+
     private void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
