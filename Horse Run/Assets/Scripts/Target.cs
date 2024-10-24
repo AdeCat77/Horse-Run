@@ -17,5 +17,9 @@ public class GameManager : MonoBehaviour
     {
         
     }
-    
+    void OnTriggerEnter(Collider other)
+    {
+        Destroy(targetRb);
+
+    }
 }
