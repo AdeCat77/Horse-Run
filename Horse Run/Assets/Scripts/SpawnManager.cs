@@ -39,7 +39,7 @@ public class SpawnManager : MonoBehaviour
             {
                 Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(20,0.5f,0), obstaclePrefabs[obstacleIndex].transform.rotation);
             }
-            if (obstacleIndex == 3)
+            else if (obstacleIndex == 3)
             {
                 Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(20,1,0), obstaclePrefabs[obstacleIndex].transform.rotation);
             }

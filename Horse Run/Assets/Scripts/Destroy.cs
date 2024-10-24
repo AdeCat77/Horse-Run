@@ -15,7 +15,7 @@ public class DestroyTarget : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (transform.position.x > exitGame)
+        if (transform.position.x < exitGame)
         {
             Destroy(gameObject);
         }
