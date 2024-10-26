@@ -12,8 +12,6 @@ public class SpawnManager : MonoBehaviour
     private float startDelay = 2;
     private float repeatRate = 2;
     private PlayerController playerControllerScript;
-    public TextMeshProUGUI scoreText;
-    private int score;
 
 
     // Start is called before the first frame update
@@ -22,8 +20,6 @@ public class SpawnManager : MonoBehaviour
         InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
         InvokeRepeating("SpawnTarget", startDelay, repeatRate);
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
-        score = 0;
-        UpdateScore(0);
     }
 
     // Update is called once per frame
@@ -59,19 +55,5 @@ public class SpawnManager : MonoBehaviour
             int targetRange = Random.Range(0,5);
             Instantiate(targetPrefab, new Vector3(25, targetRange, 0), targetPrefab.transform.rotation);
         }
-    }
-
-    IEnumerator spawnTarget()
-    {
-        while (true)
-        {
-            UpdateScore(0);
-        }
-    }
-
-    public void UpdateScore(int scoreToAdd)
-    {
-        score += scoreToAdd;
-        scoreText.text = "Score: " + score;
     }
 }

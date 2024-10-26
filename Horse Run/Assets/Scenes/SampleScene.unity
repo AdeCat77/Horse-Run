@@ -157,7 +157,6 @@ MonoBehaviour:
   - {fileID: 1974863947577741763, guid: f0dcf1919ca96d0418f3fcf023fa2050, type: 3}
   - {fileID: 3786636237028126146, guid: 440604c3f6fd8c94d93c68a0e4f89ddf, type: 3}
   targetPrefab: {fileID: 181360, guid: bd519f706f8c5cf4dad9fed04ab5b64b, type: 3}
-  scoreText: {fileID: 1796935387}
 --- !u!4 &262421875
 Transform:
   m_ObjectHideFlags: 0
@@ -496,6 +495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1608704390}
+  - component: {fileID: 1608704391}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -518,6 +518,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1608704391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1608704389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81c712d2f893f30428fd3aecd58f9101, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1691052540
 PrefabInstance:
   m_ObjectHideFlags: 0
