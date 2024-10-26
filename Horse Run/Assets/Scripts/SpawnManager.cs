@@ -40,17 +40,16 @@ public class SpawnManager : MonoBehaviour
             int obstacleIndex = Random.Range(0, obstaclePrefabs.Length);
             if (obstacleIndex == 0)
             {
-                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(20,0.5f,0), obstaclePrefabs[obstacleIndex].transform.rotation);
+                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(30,0.5f,0), obstaclePrefabs[obstacleIndex].transform.rotation);
             }
             else if (obstacleIndex == 3)
             {
-                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(20,1,0), obstaclePrefabs[obstacleIndex].transform.rotation);
+                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(30,1,0), obstaclePrefabs[obstacleIndex].transform.rotation);
             }
             else
             {
-                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(20,0,0), obstaclePrefabs[obstacleIndex].transform.rotation);
+                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(30,0,0), obstaclePrefabs[obstacleIndex].transform.rotation);
             }
-            //Instantiate(obstaclePrefabs[obstacleIndex], spawnPos, obstaclePrefabs[obstacleIndex].transform.rotation);
         }
     }
 
@@ -59,7 +58,7 @@ public class SpawnManager : MonoBehaviour
         if (!playerControllerScript.gameOver)
         {
             int targetRange = Random.Range(0,5);
-            Instantiate(targetPrefab, new Vector3(20, targetRange, 0), targetPrefab.transform.rotation);
+            Instantiate(targetPrefab, new Vector3(25, targetRange, 0), targetPrefab.transform.rotation);
         }
     }
 
