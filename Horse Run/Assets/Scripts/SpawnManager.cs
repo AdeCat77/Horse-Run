@@ -14,7 +14,6 @@ public class SpawnManager : MonoBehaviour
     private PlayerController playerControllerScript;
     public TextMeshProUGUI scoreText;
     private int score;
-    private GameManager gameManager;
 
 
     // Start is called before the first frame update

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class PlayerController : MonoBehaviour
     public float gravityModifier;
     public bool isOnGround = true;
     public bool gameOver = false;
+    public TextMeshProUGUI scoreText;
+    private int score;
 
     // Start is called before the first frame update
     void Start()
@@ -27,7 +30,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
@@ -36,6 +39,11 @@ public class PlayerController : MonoBehaviour
         }else if (collision.gameObject.CompareTag("Obstacle"))
         {
             gameOver = true;
+        }
+        else if (collision.gameObject.CompareTag("Target"))
+        {
+            score += 1;
+            scoreText.text = "Score: " + score;
         }
     }
 }
