@@ -10,15 +10,12 @@ public class PlayerController : MonoBehaviour
     public float gravityModifier;
     public bool isOnGround = true;
     public bool gameOver = false;
-    private GameManager gameManager;
-    private int point = 1;
 
     // Start is called before the first frame update
     void Start()
     {
         playerRb = GetComponent<Rigidbody>();
         Physics.gravity *= gravityModifier;
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -40,11 +37,6 @@ public class PlayerController : MonoBehaviour
         }else if (collision.gameObject.CompareTag("Obstacle"))
         {
             gameOver = true;
-        }
-        else if (collision.gameObject.CompareTag("Target"))
-        {
-            Destroy(targetRb);
-            gameManager.UpdateScore(point);
         }
     }
 }
