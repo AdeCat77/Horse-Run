@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DestroyTarget : MonoBehaviour
+public class Destroy : MonoBehaviour
 {
     private float exitGame = -25;
     
