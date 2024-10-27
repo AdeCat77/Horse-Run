@@ -9,9 +9,10 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] obstaclePrefabs;
     public GameObject targetPrefab;
     private int targetRange;
-    private float startDelay = 2;
-    private float repeatRate = 2;
+    private float startDelay = 0.2f;
+    private float repeatRate = 1.5f;
     private PlayerController playerControllerScript;
+    private int obstacleIndex;
 
 
     // Start is called before the first frame update
@@ -39,7 +40,7 @@ public class SpawnManager : MonoBehaviour
             }
             else if (obstacleIndex == 3)
             {
-                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(30,1,0), obstaclePrefabs[obstacleIndex].transform.rotation);
+                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(30, 1, 0), obstaclePrefabs[obstacleIndex].transform.rotation);
             }
             else
             {
