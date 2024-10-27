@@ -20,6 +20,6 @@ public class Target : MonoBehaviour
     void OnTriggerEnter(Collider other)
     {
         Destroy(targetRb);
-
+        
     }
 }

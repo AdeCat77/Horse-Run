@@ -530,6 +530,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81c712d2f893f30428fd3aecd58f9101, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 1796935387}
 --- !u!1001 &1691052540
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -621,7 +622,6 @@ MonoBehaviour:
   gravityModifier: 1
   isOnGround: 1
   gameOver: 0
-  scoreText: {fileID: 1796935387}
 --- !u!65 &1691052543
 BoxCollider:
   m_ObjectHideFlags: 0
