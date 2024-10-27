@@ -9,8 +9,8 @@ public class SpawnManager : MonoBehaviour
     public GameObject[] obstaclePrefabs;
     public GameObject targetPrefab;
     private int targetRange;
-    private float startDelay = 0.2f;
-    private float repeatRate = 1.5f;
+    private float startDelay = 0.5f;
+    private float repeatRate = 2f;
     private PlayerController playerControllerScript;
     private int obstacleIndex;
 
@@ -36,7 +36,7 @@ public class SpawnManager : MonoBehaviour
             int obstacleIndex = Random.Range(0, obstaclePrefabs.Length);
             if (obstacleIndex == 0)
             {
-                Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(30,0.5f,0), obstaclePrefabs[obstacleIndex].transform.rotation);
+              Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(30,0.5f,0), obstaclePrefabs[obstacleIndex].transform.rotation);
             }
             else if (obstacleIndex == 3)
             {
@@ -46,6 +46,7 @@ public class SpawnManager : MonoBehaviour
             {
                 Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(30,0,0), obstaclePrefabs[obstacleIndex].transform.rotation);
             }
+            //Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(30, 0, 0), obstaclePrefabs[obstacleIndex].transform.rotation);
         }
     }
 

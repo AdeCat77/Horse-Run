@@ -24,7 +24,5 @@ public class Destroy : MonoBehaviour
     void OnTriggerEnter(Collider collider)
     {
         Destroy(gameObject);
-        
-
     }
 }
