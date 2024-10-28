@@ -23,5 +23,10 @@ public class Target : MonoBehaviour
     {
         Destroy(targetRb);
         gameManager.UpdateScore(point);
+        if (gameObject.CompareTag("Obstacle"))
+        {
+            gameManager.GameOver();
+        }
     }
+   
 }
