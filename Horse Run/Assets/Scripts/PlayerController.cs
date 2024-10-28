@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
         else if (collision.gameObject.CompareTag("Obstacle"))
         {
             gameOver = true;
+            playerAnim.SetTrigger("Horse_Idle");
         }
     }
 }
