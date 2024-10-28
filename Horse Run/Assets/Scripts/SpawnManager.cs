@@ -12,6 +12,7 @@ public class SpawnManager : MonoBehaviour
     private float startDelay = 0.5f;
     private float repeatRate = 2f;
     private PlayerController playerControllerScript;
+    //private GameManager gameManager;
     private int obstacleIndex;
 
 
@@ -21,6 +22,7 @@ public class SpawnManager : MonoBehaviour
         InvokeRepeating("SpawnObstacle", startDelay, repeatRate);
         InvokeRepeating("SpawnTarget", startDelay, repeatRate);
         playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
+        //gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     // Update is called once per frame
@@ -46,7 +48,7 @@ public class SpawnManager : MonoBehaviour
             {
                 Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(30,0,0), obstaclePrefabs[obstacleIndex].transform.rotation);
             }
-            //Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(30, 0, 0), obstaclePrefabs[obstacleIndex].transform.rotation);
+            
         }
     }
 

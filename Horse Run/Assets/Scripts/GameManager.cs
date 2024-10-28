@@ -11,17 +11,19 @@ public class GameManager : MonoBehaviour
     private int score;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
-    private PlayerController playerControllerScript;
-    private SpawnManager spawnManagerScript;
-    private GameManager gameManager;
+    //private PlayerController playerControllerScript;
+    //private SpawnManager spawnManagerScript;
+    //private GameManager gameManager;
     public Button restartButton;
-    //public bool isGameActive;
+    private Button start;
+    public bool isGameActive;
+    public GameObject titleScreen;
 
     // Start is called before the first frame update
     void Start()
     {
-        score = 0;
-        UpdateScore(0);
+        //score = 0;
+        //UpdateScore(0);
 
        // playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         //spawnManagerScript = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
@@ -49,9 +51,17 @@ public class GameManager : MonoBehaviour
     {
         gameOverText.gameObject.SetActive(true);
         restartButton.gameObject.SetActive(true);
-        //isGameActive = false;
+        isGameActive = false;
     }
     
-
-
+    public void StartGame()
+    {
+        score = 0;
+        titleScreen.gameObject.SetActive(false);
+        if (isGameActive)
+        {
+            start = GetComponent<Button>();
+            start.onClick.AddListener(StartGame);
+        }
+    }
 }
