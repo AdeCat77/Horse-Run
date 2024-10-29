@@ -15,7 +15,7 @@ public class GameManager : MonoBehaviour
     //private SpawnManager spawnManagerScript;
     //private GameManager gameManager;
     public Button restartButton;
-    private Button start;
+    private Button start, menu, exit;
     public bool isGameActive;
     public GameObject titleScreen;
 
@@ -25,6 +25,8 @@ public class GameManager : MonoBehaviour
         //score = 0;
         //UpdateScore(0);
         isGameActive = true;
+        //start = GetComponent<Button>();
+        start.onClick.AddListener(StartGame);
 
        // playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         //spawnManagerScript = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
@@ -59,13 +61,12 @@ public class GameManager : MonoBehaviour
     {
         score = 0;
         titleScreen.gameObject.SetActive(false);
-        if (isGameActive)
-        {
-            start = GetComponent<Button>();
-            start.onClick.AddListener(StartGame);
-        }
+        isGameActive = true;
+        //if (isGameActive)
+        //{
+            //start = GetComponent<Button>();
+            //start.onClick.AddListener(StartGame);
+        //}
     }
-
-    
 
 }
