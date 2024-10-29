@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
     {
         //score = 0;
         //UpdateScore(0);
+        isGameActive = true;
 
        // playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         //spawnManagerScript = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
@@ -64,4 +65,7 @@ public class GameManager : MonoBehaviour
             start.onClick.AddListener(StartGame);
         }
     }
+
+    
+
 }
