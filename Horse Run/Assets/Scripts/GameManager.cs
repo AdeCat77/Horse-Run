@@ -22,8 +22,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //score = 0;
-        //UpdateScore(0);
+        score = 0;
+        UpdateScore(0);
         isGameActive = true;
         //start = GetComponent<Button>();
         start.onClick.AddListener(StartGame);
@@ -59,7 +59,6 @@ public class GameManager : MonoBehaviour
     
     public void StartGame()
     {
-        score = 0;
         titleScreen.gameObject.SetActive(false);
         isGameActive = true;
         //if (isGameActive)
