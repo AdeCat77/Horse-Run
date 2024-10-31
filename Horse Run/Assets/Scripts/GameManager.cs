@@ -11,9 +11,6 @@ public class GameManager : MonoBehaviour
     private int score;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
-    //private PlayerController playerControllerScript;
-    //private SpawnManager spawnManagerScript;
-    //private GameManager gameManager;
     public Button restartButton;
     private Button start, menu, exit;
     public bool isGameActive;
