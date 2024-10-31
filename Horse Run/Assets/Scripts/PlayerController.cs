@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     public bool gameOver = false;
     private GameManager gameManager;
     private Animator playerAnim;
+    public ParticleSystem explosionParticle;
+    public ParticleSystem dirtParticleBack;
+    public ParticleSystem dirtParticleFront;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +33,8 @@ public class PlayerController : MonoBehaviour
         {
             playerRb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
             isOnGround = false;
+            dirtParticleBack.Stop();
+            dirtParticleFront.Stop();
         }
     }
 
@@ -38,6 +43,8 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isOnGround = true;
+            dirtParticleBack.Play();
+            dirtParticleFront.Play();
         }
 
         else if (collision.gameObject.CompareTag("Obstacle"))
@@ -45,6 +52,9 @@ public class PlayerController : MonoBehaviour
             gameOver = true;
             gameManager.GameOver();
             playerAnim.SetTrigger("Horse_Idle");
+            explosionParticle.Play();
+            dirtParticleBack.Stop();
+            dirtParticleFront.Stop();
         }
     }
 }
