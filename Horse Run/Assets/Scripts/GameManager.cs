@@ -12,7 +12,7 @@ public class GameManager : MonoBehaviour
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
     public Button restartButton;
-    private Button start, menu, exit;
+    private Button button;
     public bool isGameActive;
     public GameObject titleScreen;
 
@@ -20,8 +20,8 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         
-        //start = GetComponent<Button>();
-        //start.onClick.AddListener(StartGame);
+        //button = GetComponent<Button>();
+        //button.onClick.AddListener(StartGame);
 
        // playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
         //spawnManagerScript = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
         UpdateScore(0);
         titleScreen.gameObject.SetActive(false);
         isGameActive = true;
+        //StarCoroutine();
         //if (isGameActive)
         //{
             //start = GetComponent<Button>();
