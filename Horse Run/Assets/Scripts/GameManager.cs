@@ -33,6 +33,14 @@ public class GameManager : MonoBehaviour
         
     }
 
+    private IEnumerator Play()
+    {
+        while (isGameActive)
+        {
+            yield return new WaitForSeconds(0.1f);
+        }
+    }
+
     public void UpdateScore(int scoreToAdd)
     {
         score += scoreToAdd;
@@ -58,7 +66,7 @@ public class GameManager : MonoBehaviour
         UpdateScore(0);
         titleScreen.gameObject.SetActive(false);
         isGameActive = true;
-        //StarCoroutine();
+        StartCoroutine(Play());
         //if (isGameActive)
         //{
             //start = GetComponent<Button>();
