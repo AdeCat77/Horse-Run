@@ -8,6 +8,9 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject apple;
+    private float spawnRate = 1.0f;
+    private float appleRange;
     private int score;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
@@ -33,11 +36,13 @@ public class GameManager : MonoBehaviour
         
     }
 
-    private IEnumerator Play()
+    private IEnumerator SpawnApple()
     {
         while (isGameActive)
         {
-            yield return new WaitForSeconds(0.1f);
+            yield return new WaitForSeconds(spawnRate);
+            float appleRange = Random.Range(0,6); 
+            Instantiate(apple);
         }
     }
 
@@ -60,18 +65,14 @@ public class GameManager : MonoBehaviour
         isGameActive = false;
     }
     
-    public void StartGame()
+    public void StartGame(int difficulty)
     {
+        spawnRate /= difficulty;
         score = 0;
         UpdateScore(0);
         titleScreen.gameObject.SetActive(false);
         isGameActive = true;
-        StartCoroutine(Play());
-        //if (isGameActive)
-        //{
-            //start = GetComponent<Button>();
-            //start.onClick.AddListener(StartGame);
-        //}
+        StartCoroutine(SpawnApple());
     }
 
 }

@@ -25,7 +25,7 @@ public class SC_MainMenu : MonoBehaviour
         //MainMenu.SetActive(false);
         //CreditsMenu.SetActive(false);
         //Image.SetActive(false);
-        gameManager.StartGame();
+        //gameManager.StartGame();
     }
 
     public void CreditsButton()

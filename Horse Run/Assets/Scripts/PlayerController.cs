@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticleBack;
     public ParticleSystem dirtParticleFront;
+    private int difficulty;
 
     // Start is called before the first frame update
     void Start()
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         Physics.gravity *= gravityModifier;
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        gameManager.StartGame();
+        gameManager.StartGame(difficulty);
     }
 
     // Update is called once per frame
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour
         {
             gameOver = true;
             gameManager.GameOver();
-            playerAnim.SetTrigger("Horse_Idle");
+            playerAnim.SetTrigger("Idle");
             explosionParticle.Play();
             dirtParticleBack.Stop();
             dirtParticleFront.Stop();

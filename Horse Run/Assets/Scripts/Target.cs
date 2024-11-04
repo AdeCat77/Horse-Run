@@ -5,12 +5,15 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     private Rigidbody targetRb;
+    //private float maxTorque = 2;
     private GameManager gameManager;
     public int point = 1;
     
     // Start is called before the first frame update
     void Start()
     {
+        //targetRb = GetComponent<Rigidbody>();
+        //targetRb.AddTorque(RandomTorque(), RandomTorque(), RandomTorque(), ForceMode.Impulse);  //Drehungen der Sammelobjekte 
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
@@ -28,5 +31,10 @@ public class Target : MonoBehaviour
             gameManager.GameOver();
         }
     }
+
+    //float RandomTorque()
+    //{
+        //return Random.Range(-maxTorque, maxTorque);
+    //}
    
 }
