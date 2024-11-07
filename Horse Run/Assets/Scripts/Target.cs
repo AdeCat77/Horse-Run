@@ -5,6 +5,9 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     private Rigidbody targetRb;
+    public AudioClip collectSound;
+    private AudioSource playerAudio;
+
     //private int targetRange;
     //private float speed = 7;
     //private float maxTorque = 3;
@@ -23,6 +26,7 @@ public class Target : MonoBehaviour
         //int targetRange = Random.Range(0,5);
         //transform.position = Position();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -34,6 +38,11 @@ public class Target : MonoBehaviour
     }
     void OnTriggerEnter(Collider other)
     {
+        
+        if (targetRb != null)
+        {
+            playerAudio.PlayOneShot(collectSound, 1.0f);
+        }
         Destroy(targetRb);
         gameManager.UpdateScore(point);
         if (gameObject.CompareTag("Obstacle"))

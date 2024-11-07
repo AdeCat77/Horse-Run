@@ -12,10 +12,13 @@ public class PlayerController : MonoBehaviour
     public bool gameOver = false;
     private GameManager gameManager;
     private Animator playerAnim;
+    private SC_MainMenu mainmenu;
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticleBack;
     public ParticleSystem dirtParticleFront;
     private int difficulty;
+    public AudioClip runSound;
+    private AudioSource playerAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,7 @@ public class PlayerController : MonoBehaviour
         Physics.gravity *= gravityModifier;
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         gameManager.StartGame(difficulty);
+        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -36,6 +40,7 @@ public class PlayerController : MonoBehaviour
             isOnGround = false;
             dirtParticleBack.Stop();
             dirtParticleFront.Stop();
+            playerAudio.Stop();
         }
     }
 
@@ -46,6 +51,7 @@ public class PlayerController : MonoBehaviour
             isOnGround = true;
             dirtParticleBack.Play();
             dirtParticleFront.Play();
+            playerAudio.PlayOneShot(runSound, 0.5f);
         }
 
         else if (collision.gameObject.CompareTag("Obstacle"))
@@ -56,6 +62,8 @@ public class PlayerController : MonoBehaviour
             explosionParticle.Play();
             dirtParticleBack.Stop();
             dirtParticleFront.Stop();
+            playerAudio.Stop();
         }
     }
+    
 }
