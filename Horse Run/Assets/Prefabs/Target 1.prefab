@@ -148,8 +148,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe201157d022d004ab73f920734641e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  collectSound: {fileID: 8300000, guid: e08d9cc7e9f45f342bbf21231248cf42, type: 3}
   point: 1
-  explosionParticle: {fileID: 2478549635105912040, guid: 86f5b2c1df3c8af4da9b226f0a27c771, type: 3}
 --- !u!114 &-6345469471905411145
 MonoBehaviour:
   m_ObjectHideFlags: 0
