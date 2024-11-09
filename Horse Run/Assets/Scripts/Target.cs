@@ -16,8 +16,9 @@ public class Target : MonoBehaviour
     private GameManager gameManager;
     private PlayerController playerController;
     public int point = 1;
-    //public ParticleSystem explosionParticle;
     
+    //public ParticleSystem explosionParticle;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class Target : MonoBehaviour
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         playerController = GameObject.Find("Player").GetComponent<PlayerController>();
         playerAudio = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame

@@ -15,7 +15,6 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticleBack;
     public ParticleSystem dirtParticleFront;
-    //private int difficulty;
     public AudioClip runSound;
     private AudioSource playerAudio;
 
