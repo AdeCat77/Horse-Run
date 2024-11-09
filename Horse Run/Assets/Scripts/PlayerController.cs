@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticleBack;
     public ParticleSystem dirtParticleFront;
-    private int difficulty;
+    //private int difficulty;
     public AudioClip runSound;
     private AudioSource playerAudio;
 
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         playerAnim = GetComponent<Animator>();
         Physics.gravity *= gravityModifier;
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
-        gameManager.StartGame(difficulty);
+        gameManager.StartGame();
         playerAudio = GetComponent<AudioSource>();
     }
 

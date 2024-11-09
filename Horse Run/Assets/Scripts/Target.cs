@@ -11,8 +11,8 @@ public class Target : MonoBehaviour
     //private int targetRange;
     //private float speed = 7;
     //private float maxTorque = 3;
-    private float yRange = 5;
-    private float xSpawnPos = 25;
+    //private float yRange = 5;
+    //private float xSpawnPos = 25;
     //public float torque;
     private GameManager gameManager;
     public int point = 1;
@@ -25,7 +25,7 @@ public class Target : MonoBehaviour
         //targetRb.AddForce(Force(), ForceMode.Impulse);
         //targetRb.AddTorque(Rotate(), Rotate(), Rotate(), ForceMode.Impulse);
         //int targetRange = Random.Range(0,5);
-        transform.position = Position();
+        //transform.position = Position();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         playerAudio = GetComponent<AudioSource>();
     }
@@ -63,9 +63,9 @@ public class Target : MonoBehaviour
         //return Random.Range(-maxTorque, maxTorque);
     //}
 
-    Vector3 Position()
-    {
-        return new Vector3(xSpawnPos, Random.Range(0, yRange));
-    }
+    //Vector3 Position()
+    //{
+        //return new Vector3(xSpawnPos, Random.Range(0, yRange));
+    //}
    
 }

@@ -35,7 +35,7 @@ public class SpawnManager : MonoBehaviour
         if (!playerControllerScript.gameOver)
         {
             int obstacleIndex = Random.Range(0, obstaclePrefabs.Length);
-            float obstacleRange = Random.Range(30,40);
+            float obstacleRange = Random.Range(35,40);
             if (obstacleIndex == 0)
             {
               Instantiate(obstaclePrefabs[obstacleIndex], new Vector3(obstacleRange,0.5f,0), obstaclePrefabs[obstacleIndex].transform.rotation);
