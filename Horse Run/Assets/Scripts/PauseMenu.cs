@@ -6,7 +6,7 @@ public class PauseMenu : MonoBehaviour
 {
 
     public GameObject PausePanel;
-
+    
 
     // Update is called once per frame
     void Update()
@@ -17,13 +17,15 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         PausePanel.SetActive(true);
-        Time.timeScale = 0;  //pauses the game
+        Time.timeScale = 0;          //pauses the game
+        AudioListener.pause = true;  //stops horse gallop sound
     }
 
     public void Continue()
     {
         PausePanel.SetActive(false);
-        Time.timeScale = 1;  //continues the game
+        Time.timeScale = 1;           //continues the game
+        AudioListener.pause = false;  //continues horse gallop sound
     }
 
     public void Quit()
