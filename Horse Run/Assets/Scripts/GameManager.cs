@@ -8,9 +8,6 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    //public GameObject apple;
-    //private float spawnRate = 1.0f;
-    //private float appleRange;
     private int score;
     public TextMeshProUGUI scoreText;
     public TextMeshProUGUI gameOverText;
@@ -18,16 +15,13 @@ public class GameManager : MonoBehaviour
     private Button button;
     public bool isGameActive;
     public GameObject titleScreen;
+    public GameObject mainmenuCanvas;
 
     // Start is called before the first frame update
     void Start()
     {
-        
         //button = GetComponent<Button>();
         //button.onClick.AddListener(StartGame);
-
-       // playerControllerScript = GameObject.Find("Player").GetComponent<PlayerController>();
-        //spawnManagerScript = GameObject.Find("Spawn Manager").GetComponent<SpawnManager>();
     }
 
     // Update is called once per frame
@@ -70,12 +64,11 @@ public class GameManager : MonoBehaviour
     
     public void StartGame()
     {
-        //spawnRate /= difficulty;
         score = 0;
         UpdateScore(0);
         titleScreen.gameObject.SetActive(false);
         isGameActive = true;
         //StartCoroutine();
+        mainmenuCanvas.SetActive(false);
     }
-
 }

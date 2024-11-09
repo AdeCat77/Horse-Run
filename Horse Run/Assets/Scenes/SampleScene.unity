@@ -675,7 +675,6 @@ MonoBehaviour:
   - {fileID: 7676170704308851645, guid: f0d5926e5b41c1d4c8893fd020406e20, type: 3}
   targetPrefabs:
   - {fileID: 181360, guid: bd519f706f8c5cf4dad9fed04ab5b64b, type: 3}
-  - {fileID: 4851842782801254529, guid: f44f9eb0c96e1254f92b96745b5824f2, type: 3}
 --- !u!4 &262421875
 Transform:
   m_ObjectHideFlags: 0
@@ -1491,7 +1490,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &555016917
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3365,6 +3364,7 @@ MonoBehaviour:
   restartButton: {fileID: 449117466}
   isGameActive: 0
   titleScreen: {fileID: 1214663719}
+  mainmenuCanvas: {fileID: 555016916}
 --- !u!1001 &1691052540
 PrefabInstance:
   m_ObjectHideFlags: 0

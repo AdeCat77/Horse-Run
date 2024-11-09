@@ -12,7 +12,6 @@ public class PlayerController : MonoBehaviour
     public bool gameOver = false;
     private GameManager gameManager;
     private Animator playerAnim;
-    private SC_MainMenu mainmenu;
     public ParticleSystem explosionParticle;
     public ParticleSystem dirtParticleBack;
     public ParticleSystem dirtParticleFront;
@@ -25,10 +24,10 @@ public class PlayerController : MonoBehaviour
     {
         playerRb = GetComponent<Rigidbody>();
         playerAnim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
         Physics.gravity *= gravityModifier;
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         gameManager.StartGame();
-        playerAudio = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -65,5 +64,4 @@ public class PlayerController : MonoBehaviour
             playerAudio.Stop();
         }
     }
-    
 }

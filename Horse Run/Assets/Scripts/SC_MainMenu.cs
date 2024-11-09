@@ -8,24 +8,18 @@ public class SC_MainMenu : MonoBehaviour
 {
     public GameObject MainMenu;
     public GameObject CreditsMenu;
-    //public GameObject Image;
-    private GameManager gameManager;
+    //private GameManager gameManager;
 
     // Start is called before the first frame update
     void Start()
     {
         MainMenuButton();
-        gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
     }
 
     public void PlayNowButton()
     {
-        // Play Now Button has been pressed, here you can initialize your game (For example Load a Scene called GameLevel etc.)
+        // Play Now Button has been pressed, game SampleScene is initialized  
         UnityEngine.SceneManagement.SceneManager.LoadScene("SampleScene");
-        //MainMenu.SetActive(false);
-        //CreditsMenu.SetActive(false);
-        //Image.SetActive(false);
-        //gameManager.StartGame();
     }
 
     public void CreditsButton()
