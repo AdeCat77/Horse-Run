@@ -17,13 +17,13 @@ public class PauseMenu : MonoBehaviour
     public void Pause()
     {
         PausePanel.SetActive(true);
-        Time.timeScale = 0;
+        Time.timeScale = 0;  //pauses the game
     }
 
     public void Continue()
     {
         PausePanel.SetActive(false);
-        Time.timeScale = 1;
+        Time.timeScale = 1;  //continues the game
     }
 
     public void Quit()
