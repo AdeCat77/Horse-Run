@@ -10,14 +10,16 @@ public class Target : MonoBehaviour
     private GameManager gameManager;
     Vector3 pivotPoint = new Vector3(25,5,0);
     public int point = 1;
-    //public ParticleSystem explosionParticle;
     
+    //public ParticleSystem explosionParticle;
+
     // Start is called before the first frame update
     void Start()
     {
         targetRb = GetComponent<Rigidbody>();
         gameManager = GameObject.Find("Game Manager").GetComponent<GameManager>();
         playerAudio = GetComponent<AudioSource>();
+        
     }
 
     // Update is called once per frame
