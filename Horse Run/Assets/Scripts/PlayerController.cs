@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         {
             gameOver = true;
             gameManager.GameOver();
-            playerAnim.SetTrigger("Idle");
+            playerAnim.SetTrigger("Horse_Idle");
             explosionParticle.Play();
             dirtParticleBack.Stop();
             dirtParticleFront.Stop();
